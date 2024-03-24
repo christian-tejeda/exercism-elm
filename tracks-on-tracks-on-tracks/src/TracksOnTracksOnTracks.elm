@@ -27,17 +27,8 @@ reverseList languages =
 
 excitingList : List String -> Bool
 excitingList languages =
-    let 
-        takeOne =
-            List.take 1 languages
-        firstItemIsElm = 
-            List.member "Elm" (takeOne) 
-        dropOne =
-            List.drop 1 languages
-        secondItemIsElm =
-            List.member "Elm" (List.take 1 dropOne)
-        containsLessThanThree =
-            List.length languages <= 3
-    in
-        firstItemIsElm || (secondItemIsElm && containsLessThanThree)
+    case languages of
+        "Elm" :: _ -> True
+        _ :: "Elm" :: _ -> List.length languages <= 3
+        _ -> False
 
