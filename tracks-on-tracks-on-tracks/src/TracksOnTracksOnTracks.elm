@@ -31,4 +31,3 @@ excitingList languages =
         "Elm" :: _ -> True
         _ :: "Elm" :: _ -> List.length languages <= 3
         _ -> False
-
